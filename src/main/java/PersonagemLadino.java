@@ -1,0 +1,2 @@
+public class PersonagemLadino {
+}
