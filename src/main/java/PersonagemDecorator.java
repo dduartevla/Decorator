@@ -6,7 +6,7 @@ public abstract class PersonagemDecorator implements Personagem {
     private Personagem personagem;
     public String equipamento;
 
-    public PersonagemDecorator(Personagem persoangem) {
+    public PersonagemDecorator(Personagem personagem) {
         this.personagem = personagem;
     }
 
@@ -25,15 +25,15 @@ public abstract class PersonagemDecorator implements Personagem {
     public abstract String getBonus();
 
     public List<String> getListaBonus(){
-        //return this.curso.getCargaHoraria() * (1 + (this.getPercentualCargaHoraria() / 100));
-        this.personagem.getListaBonus().add(this.getBonus());
+        if (!this.personagem.getListaBonus().contains(this.getBonus())) {
+            this.personagem.getListaBonus().add(this.getBonus());
+        }
         return this.personagem.getListaBonus();
     }
 
     public abstract String getNomeEquipamento();
 
     public String getEquipamento(){
-        //return this.curso.getEstrutura() + "/" + this.getNomeEstrutura();
         return this.personagem.getEquipamento() + " >> " + this.getNomeEquipamento();
     }
 

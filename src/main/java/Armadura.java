@@ -1,18 +1,17 @@
-public class Armadura {
-    public class Amuleto extends PersonagemDecorator{
+import java.util.List;
 
-        public Amuleto (Personagem personagem){
-            super(personagem);
-        }
-        @Override
-        public String getBonus() {
-            return "Bônus de 30% em Furtividade. Ataques furtivos tem dano crítico automático";
-        }
+public class Armadura extends PersonagemDecorator{
 
-        @Override
-        public String getNomeEquipamento() {
-            return "Amuleto do Assassino";
-        }
+    public Armadura(Personagem personagem){
+        super(personagem);
+    }
+    @Override
+    public String getBonus() {
+        return "Aumenta Stamina em 40 Pontos e em 50% a Furtividade";
     }
 
+    @Override
+    public String getNomeEquipamento() {
+        return "Armadura do Assassino";
+    }
 }
